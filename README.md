@@ -43,6 +43,4 @@ X-ObjectColor2HSV: #999#999#999
 
 This software is licensed under [GNU General Public License][GNU GPL] and distributed AS IS, without warranties of any kind.
 
-[origin]: http://code.google.com/p/python-mjpeg-over-http-client/ "Original project page"
-[pool]: http://pool.amursu.ru/
 [GNU GPL]: http://opensource.org/licenses/gpl-3.0.html "GNU General Public License text"
