@@ -38,7 +38,7 @@ public class XnapBoxImageData extends XnapBoxData {
 			timestamp = parseTimestamp(headers.get("X-Timestamp"));
 		}
 		imgID = parseImageID(headers.get("X-Timestamp"));
-		blurIndex = parseInt(headers.get("X-BLURINDEX"));
+		blurIndex = parseInt(headers.get("X-BlurIndex"));
 	}
 
 	@Override
