@@ -97,4 +97,15 @@ public class XnapBoxData {
 		
 		return c;
 	}
+	
+	protected Integer parseInt(String intStr)
+	{
+		try
+		{
+			return Integer.parseInt(intStr);
+		}catch(NumberFormatException ex)
+		{
+			return -1;
+		}
+	}
 }

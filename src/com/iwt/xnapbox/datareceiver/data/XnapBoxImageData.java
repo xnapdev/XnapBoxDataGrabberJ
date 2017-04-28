@@ -15,6 +15,7 @@ public class XnapBoxImageData extends XnapBoxData {
 	public String trackerDir;
 	public Calendar timestamp;
 	public String imgID;
+	public int blurIndex;
 	
 	public XnapBoxImageData(HashMap<String, String> headers)
 	{
@@ -37,14 +38,16 @@ public class XnapBoxImageData extends XnapBoxData {
 			timestamp = parseTimestamp(headers.get("X-Timestamp"));
 		}
 		imgID = parseImageID(headers.get("X-Timestamp"));
+		blurIndex = parseInt(headers.get("X-BLURINDEX"));
 	}
-	
+
 	@Override
 	public String toString() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
 		
 		return "XnapBoxImageData [color1=" + color1 + ", color2=" + color2 + ", objPos=" + objPos + ", height=" + height
 				+ ", width=" + width + ", trackerID=" + trackerID + ", trackerDir=" + trackerDir + ", timestamp="
-				+ sdf.format(timestamp.getTime()) + ", imgID=" + imgID + "]";
+				+ sdf.format(timestamp.getTime()) + ", imgID=" + imgID + ", blurIndex=" + blurIndex + "]";
 	}
+	
 }

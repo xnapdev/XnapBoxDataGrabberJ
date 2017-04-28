@@ -1,6 +1,10 @@
 package com.iwt.xnapbox.datareceiver;
 
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -45,16 +49,23 @@ public class Main
 	}
 	
 	
-	public static void main(String[] args) throws InterruptedException 
+	public static void main(String[] args) throws InterruptedException, IOException 
 	{	
+		Path dir = Paths.get("./images");
+		
 		FileWritter fw = new FileWritter();
-		fw.setOutputPath("./images/");
+		fw.setOutputPath(dir.toString());
+		
+		if (Files.notExists(dir))
+		{
+			Files.createDirectories(dir);
+		}
 		
 		XnapBoxDataReceiver xbdr = new XnapBoxDataReceiver(fw);
 		
 		System.out.println("Try Connect");
 		
-		if(xbdr.connect("http://192.168.99.3:8080/", 8000, 2000))
+		if(xbdr.connect("http://192.168.99.3:8080/", 8000, 30000))
 		{
 			System.out.println("Start To Read for 300s");
 			
