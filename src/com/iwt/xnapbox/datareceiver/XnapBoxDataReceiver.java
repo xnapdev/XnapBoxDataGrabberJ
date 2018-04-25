@@ -101,10 +101,6 @@ public class XnapBoxDataReceiver {
 			int b = -1;
 
 			do {
-				if (terminated) {
-					return;
-				}
-
 				if (paused) {
 					try {
 						synchronized (lock) {
@@ -112,6 +108,10 @@ public class XnapBoxDataReceiver {
 						}
 					} catch (InterruptedException e) {
 					}
+				}
+				
+				if (terminated) {
+					return;
 				}
 
 				try {

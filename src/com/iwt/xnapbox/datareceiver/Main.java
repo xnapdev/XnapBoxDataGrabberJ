@@ -65,7 +65,7 @@ public class Main
 		
 		System.out.println("Try Connect");
 		
-		if(xbdr.connect("http://192.168.99.3:8080/", 8000, 30000))
+		if(xbdr.connect("http://172.16.1.61:8080/", 8000, 30000))
 		{
 			System.out.println("Start To Read for 300s");
 			

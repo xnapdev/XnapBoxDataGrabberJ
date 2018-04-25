@@ -36,7 +36,7 @@ public class XnapBoxData {
 		{
 			if (l.contains(":"))
 			{
-//				System.out.print(l);
+				System.out.print(l);
 				headers.put(l.substring(0, l.indexOf(":")).trim(), l.substring(l.indexOf(":")+1).trim());
 			}
 		}
@@ -83,6 +83,20 @@ public class XnapBoxData {
 			}
 		}
 		return ts;
+	}
+	
+	protected Calendar parseEpochTime(String epochTime)
+	{
+		//1524626788101
+		Calendar ts = Calendar.getInstance();
+		try
+		{
+			long etime = Long.parseLong(epochTime);
+			ts.setTimeInMillis(etime);
+			return ts;
+		}catch(Exception ex) {
+			return null;
+		}
 	}
 	
 	protected Color parseColor(String hsvStr)
