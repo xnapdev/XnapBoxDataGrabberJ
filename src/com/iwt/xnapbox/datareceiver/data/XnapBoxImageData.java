@@ -13,7 +13,7 @@ public class XnapBoxImageData extends XnapBoxData {
 	public int height;
 	public int width;
 	public Position objPos;
-	public String sourceID;
+	public int sourceID;
 	public int frameNo;
 	public Color color1;
 	public Color color2;
@@ -44,7 +44,9 @@ public class XnapBoxImageData extends XnapBoxData {
 		blurIndex = parseInt(headers.get("X-BlurIndex"));
 		
 		captureTime = parseEpochTime(headers.get("X-CaptureTime"));
-		sourceID = headers.get("X-SourceID");
+		String srcID = headers.get("X-SourceID");
+		if (srcID != null && !srcID.equals("")) //For backward compatibility of old version XB.
+			sourceID = Integer.parseInt(srcID);
 		frameNo = Integer.parseInt(headers.get("X-FrameNo"));
 	}
 
