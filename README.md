@@ -52,11 +52,11 @@ X-BlurIndex: 99999
 (Blur index indicate the blur level: 0-10000. Normally >75 means sharp)
 ```
 
-## XnapBox (Heartbest) HTTP Headers (>= r.2.4.0)
+## XnapBox (Heartbeat) HTTP Headers (>= r.2.4.0)
 ```
 X-CaptureTime: 999999999
 Epoch (UNIX) time of heartbeat generate.
-You may use this heartbeat to check whether time is synchroized and connection a fine.
+You may use this heartbeat to check whether time is synchronized and connection a fine.
 ```
 
 ## XnapBox HTTP Headers (>= r.0.9.8)
